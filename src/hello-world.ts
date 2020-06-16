@@ -1,3 +1,4 @@
 const message: string = 'Hello World';
 
-console.log(message);
+const name = 'Dusan'
+console.log(`${message}, ${name} on ${new Date().toTimeString()}`);
