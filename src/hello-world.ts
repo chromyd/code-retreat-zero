@@ -1,4 +1,3 @@
-const message = 'Hello World';
-
-const name = 'Dusan'
-console.log(`${message}, ${name} on ${new Date().toTimeString()}`);
+export function greet(name: string): string {
+    return `Hello, ${name} on ${new Date().toTimeString()}`;
+}
