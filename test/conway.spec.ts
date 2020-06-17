@@ -40,5 +40,4 @@ describe('Conway Game of Life', () => {
         expect(nextGen).to.deep.contain({x:1,y:1});
     });
 
-
 })

@@ -18,7 +18,7 @@ function countNeighbors(c1:cell,list_of_cells:cell[]){
 }
 
 function resurrectNeighbors(cells: cell[]) : cell[] {
-    const deadCells: cell[] = cells.flatMap(c => [
+    const deadCells = cells.flatMap(c => [
         {x:c.x-1, y:c.y-1},{x:c.x, y:c.y-1},{x:c.x+1, y:c.y-1},
         {x:c.x-1, y:c.y},{x:c.x+1, y:c.y},
         {x:c.x-1, y:c.y+1},{x:c.x, y:c.y+1},{x:c.x+1, y:c.y+1}]);
