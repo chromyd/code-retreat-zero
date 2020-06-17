@@ -21,8 +21,8 @@ function resurrectNeighbors(cells: cell[]) : cell[] {
     const deadCells = cells.flatMap(c => [
         {x:c.x-1, y:c.y-1},{x:c.x, y:c.y-1},{x:c.x+1, y:c.y-1},
         {x:c.x-1, y:c.y},{x:c.x+1, y:c.y},
-        {x:c.x-1, y:c.y+1},{x:c.x, y:c.y+1},{x:c.x+1, y:c.y+1}]);
-    return [... new Set(deadCells)].filter(c => countNeighbors(c, cells) == 3);
+        {x:c.x-1, y:c.y+1},{x:c.x, y:c.y+1},{x:c.x+1, y:c.y+1}].filter(c => !cells.includes(c)));
+    return [...new Set(deadCells.map(c => JSON.stringify(c)))].map(c=> JSON.parse(c)).filter(c => countNeighbors(c, cells) == 3);
 }
 
 export function nextGeneration(cells:cell[]) : cell[] {

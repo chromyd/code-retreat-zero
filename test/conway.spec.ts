@@ -26,7 +26,7 @@ describe('Conway Game of Life', () => {
         // act
         const nextGen = nextGeneration(currentGeneration);
         // assert
-        expect(nextGen).to.deep.contain({x:1,y:1});
+        expect(nextGen).to.have.deep.members([{x:1,y:1}]);
     });
 
     it('dead cell with three neighbors is resurrected', () => {
@@ -35,9 +35,7 @@ describe('Conway Game of Life', () => {
         // act
         const nextGen = nextGeneration(currentGeneration);
         // assert
-        expect(nextGen).to.deep.contain({x:0,y:1});
-        expect(nextGen).to.deep.contain({x:-1,y:1});
-        expect(nextGen).to.deep.contain({x:1,y:1});
+        expect(nextGen).to.have.deep.members([{x:0,y:1},{x:-1,y:1},{x:1,y:1}]);
     });
 
 })
